@@ -94,7 +94,6 @@ available and the total number you bought/plan to buy.
         self.cost_input = QLineEdit()
         self.cost_input.setPlaceholderText("Cost")
         self.cost_input.setFont(font_new)
-        #self.cost_input.setStyleSheet("background-color: green;")  # Set background color
         layout.addWidget(self.cost_input)
 
         self.value_input = QLineEdit()
@@ -117,11 +116,9 @@ available and the total number you bought/plan to buy.
         layout.addWidget(self.calculate_button)
         self.calculate_button.clicked.connect(self.calculate_utility)
 
-#new
         self.back_button = HoverButton("Back to Home")
         layout.addWidget(self.back_button)
         self.back_button.clicked.connect(self.go_to_home_page)
-#old
         
         self.result_label = QLabel()
         layout.addWidget(self.result_label)
@@ -131,10 +128,9 @@ available and the total number you bought/plan to buy.
         self.setLayout(layout)
 
     def go_to_home_page(self):
-        # Get the parent widget (MainWindow) and switch to the home page
+        # Gets the parent widget (MainWindow) and switch to the home page
         parent = self.parentWidget().parentWidget()
         parent.stack.setCurrentWidget(parent.home_page)
-        #parent.open_new_page()  # Call the method to switch pages defined in MainWindow
 
     def calculate_utility(self):
         try:
